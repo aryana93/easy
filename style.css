@@ -18,10 +18,11 @@ margin-top:1rem;
 font-family:easy;
 font-size:2rem;
 margin-top:1rem;
-margin-bottom:30rem;
+margin-bottom:1rem;
 }
 
 .wrapper{
-max-width:52rem;
+max-width:50rem;
 margin:auto;
+margin-bottom:30rem;
 }
