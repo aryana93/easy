@@ -1,0 +1,32 @@
+@font-face {
+  font-family: easy;
+  src: url(./fonts/er.woff);
+  font-weight:normal;
+}
+
+@font-face {
+  font-family: easy;
+  src: url(./fonts/erb.woff);
+  font-weight:bold;
+}
+
+body{
+background:#222;
+}
+
+#text{
+margin-top:1rem;
+}
+
+.easy{
+font-family:easy;
+font-size:2rem;
+margin-top:1rem;
+color:white;
+
+}
+
+.wrapper{
+max-width:50rem;
+margin:auto;
+}
