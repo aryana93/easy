@@ -7,7 +7,7 @@ let bg=document.querySelector('#bg')
 let fg =document.querySelector('#fg')
 let wrapper=document.querySelector("#wrapper")
 let arabiccheck = document.querySelector("#arabic")
-let arabicfont = "Iran Sans"
+let arabicfont = "Noto Sans Arabic"
 
 arabiccheck.addEventListener('input', function(e) {
   if (e.target.checked) {
