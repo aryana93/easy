@@ -99,3 +99,26 @@ dec.addEventListener("click", function(e){
     localStorage.setItem('fontsize',easy.style.fontSize)
 })
 
+document.body.addEventListener("keydown", function (ev) {
+
+	// function to check the detection
+	ev = ev || window.event; // Event object 'ev'
+	let key = ev.which || ev.keyCode; // Detecting keyCode
+	
+	// Detecting Ctrl
+	let ctrl = ev.ctrlKey ? ev.ctrlKey : ((key === 17) ? true : false);
+
+	// If key pressed is V and if ctrl is true.
+	if (key == 86 && ctrl) {
+		// print in console.
+      navigator.clipboard.readText().then(function(text) {
+        text = text.replace(/-$\n/gm, "")
+        text = text.replace(/([^\.])$\n/gm, "$1 ")
+        text = text.replace(/\.$/gm, ".\n")
+        easy.innerText = text
+        localStorage.setItem('easy',text)
+  })
+	}
+	
+}, false);
+
