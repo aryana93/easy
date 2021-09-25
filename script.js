@@ -6,6 +6,31 @@ let dec = document.querySelector("#dec")
 let bg=document.querySelector('#bg')
 let fg =document.querySelector('#fg')
 let wrapper=document.querySelector("#wrapper")
+let arabiccheck = document.querySelector("#arabic")
+
+arabiccheck.addEventListener('input', function(e) {
+  if (e.target.checked) {
+    easy.style.fontFamily = "Noto Sans Arabic"
+    easy.style.direction = "rtl"
+    localStorage.setItem('arabic', 'checked')
+  } else {
+    easy.style.fontFamily = "easy"
+    easy.style.direction = "ltr"
+    localStorage.setItem('arabic', 'unckecked')
+    }
+})
+
+if (localStorage.getItem('arabic')) {
+  if (localStorage.getItem('arabic') === 'checked') {
+    easy.style.fontFamily = "Noto Sans Arabic"
+    easy.style.direction = "rtl"
+    arabiccheck.checked = true
+  } else if (localStorage.getItem('arabic') === 'unchecked') {
+    easy.style.fontFamily = "easy"
+    easy.style.direction = "ltr"
+    arabiccheck.checked = false
+  }
+}
 
 if (localStorage.getItem('maxwidth')){
   wrapper.style.maxWidth=localStorage.getItem('maxwidth')
