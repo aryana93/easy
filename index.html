@@ -7,10 +7,17 @@
   <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body>
-<div class="wrapper">
+<div id="wrapper" class="wrapper">
+
+<input class="button" type="button" id="dec" value="  -  ">
+<input class="button" type="button" id="inc" value="  +  ">
+<input type="color" id="fg">
+<input type="color" id="bg" value="#ffffff">
+<input class="button" type="button" id="paste" value="Paste Text" autofocus>
+<textarea id="text" rows="1" cols="20"></textarea>
+
 <div id="easy" class="easy"></div>
-<input type="button" id="butt" value="Paste Text" autofocus>
-<textarea id="text" rows="1" cols="50"></textarea>
+
 </div>
   <script src="script.js" type="text/javascript"></script>
 </body>
