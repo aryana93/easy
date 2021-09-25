@@ -3,7 +3,8 @@ let easy = document.querySelector("#easy")
 let butt = document.querySelector("#butt")
 
 txt.addEventListener("input", function(){
-  easy.innerText = txt.value
+  text = txt.value.replace(/-$\n/gm, "")
+  easy.innerText = text
 })
 
 butt.addEventListener("click",function(){
