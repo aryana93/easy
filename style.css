@@ -12,10 +12,17 @@
   font-weight:bold;
 }
 
+@font-face {
+  font-family: "Iran Sans";
+  src: url(./fonts/IRANSansWeb-5-5.woff2);
+  font-weight:normal;
+}
+
 body {
 background-image:url('./img/bg.jpg');
 background-size: cover;
 height:100vh;
+font-family:easy;
 }
 
 #text{

@@ -7,10 +7,11 @@ let bg=document.querySelector('#bg')
 let fg =document.querySelector('#fg')
 let wrapper=document.querySelector("#wrapper")
 let arabiccheck = document.querySelector("#arabic")
+let arabicfont = "Iran Sans"
 
 arabiccheck.addEventListener('input', function(e) {
   if (e.target.checked) {
-    easy.style.fontFamily = "Noto Sans Arabic"
+    easy.style.fontFamily = arabicfont
     easy.style.direction = "rtl"
     localStorage.setItem('arabic', 'checked')
   } else {
@@ -22,7 +23,7 @@ arabiccheck.addEventListener('input', function(e) {
 
 if (localStorage.getItem('arabic')) {
   if (localStorage.getItem('arabic') === 'checked') {
-    easy.style.fontFamily = "Noto Sans Arabic"
+    easy.style.fontFamily = arabicfont
     easy.style.direction = "rtl"
     arabiccheck.checked = true
   } else if (localStorage.getItem('arabic') === 'unchecked') {
