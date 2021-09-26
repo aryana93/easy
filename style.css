@@ -3,55 +3,55 @@
 @font-face {
   font-family: easy;
   src: url(./fonts/er.woff);
-  font-weight:normal;
+  font-weight: normal;
 }
 
 @font-face {
   font-family: easy;
   src: url(./fonts/erb.woff);
-  font-weight:bold;
+  font-weight: bold;
 }
 
 @font-face {
   font-family: "Iran Sans";
   src: url(./fonts/IRANSansWeb-5-5.woff2);
-  font-weight:normal;
+  font-weight: normal;
 }
 
 body {
-background-image:url('./img/bg.jpg');
-background-size: cover;
-height:100vh;
-font-family:easy;
+  background-image: url('./img/bg.jpg');
+  background-size: cover;
+  height: 100vh;
+  font-family: easy;
 }
 
-#text{
-margin-top:1rem;
+#text {
+  margin-top: 1rem;
 }
 
-.easy{
-font-family:easy;
-font-size:2rem;
-margin-top:1rem;
-margin-bottom:1rem;
-padding:1rem;
-padding-bottom:30rem;
+.easy {
+  font-family: easy;
+  font-size: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  padding-bottom: 30rem;
 }
 
-.wrapper{
-max-width:50rem;
-margin:auto;
-padding:0;
-background-color:#bbb;
+.wrapper {
+  max-width: 50rem;
+  margin: auto;
+  padding: 0;
+  background-color: #bbb;
 }
 
 .button {
-font-family:easy;
-background-color:transparent;
-border:1px solid #444;
-padding:0 0.75rem;
-margin:0.2rem 0.5rem;
-outline:none;
-border-radius:0.5rem;
-font-size:1rem;
+  font-family: easy;
+  background-color: transparent;
+  border: 1px solid #444;
+  padding: 0 0.75rem;
+  margin: 0.2rem 0.5rem;
+  outline: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
 }
