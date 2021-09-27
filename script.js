@@ -85,8 +85,8 @@ bg.addEventListener('input', function(e) {
 
 txt.addEventListener("input", function() {
   text = txt.value.replace(/-$\n/gm, "")
-  text = text.replace(/([^\.])$\n/gm, "$1 ")
-  text = text.replace(/\.$/gm, ".\n")
+  text = text.replace(/([^\.\?\!\:»])$\n/gm, "$1 ")
+  text = text.replace(/([\.\?\!\:»])$/gm, "$1\n")
   easy.innerText = text
   localStorage.setItem('easy', text)
 })
@@ -94,8 +94,8 @@ txt.addEventListener("input", function() {
 paste.addEventListener("click", function() {
   navigator.clipboard.readText().then(function(text) {
     text = text.replace(/-$\n/gm, "")
-    text = text.replace(/([^\.])$\n/gm, "$1 ")
-    text = text.replace(/\.$/gm, ".\n")
+    text = text.replace(/([^\.\?\!\:»])$\n/gm, "$1 ")
+    text = text.replace(/([\.\?\!\:»])$/gm, "$1\n")
     easy.innerText = text
     localStorage.setItem('easy', text)
   })
@@ -131,8 +131,8 @@ document.body.addEventListener("keydown", function(ev) {
     // print in console.
     navigator.clipboard.readText().then(function(text) {
       text = text.replace(/-$\n/gm, "")
-      text = text.replace(/([^\.])$\n/gm, "$1 ")
-      text = text.replace(/\.$/gm, ".\n")
+      text = text.replace(/([^\.\?\!\:»])$\n/gm, "$1 ")
+      text = text.replace(/([\.\?\!\:»])$/gm, "$1\n")
       easy.innerText = text
       localStorage.setItem('easy', text)
     })
