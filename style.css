@@ -36,6 +36,7 @@ body {
   margin-bottom: 1rem;
   padding: 1rem;
   padding-bottom: 30rem;
+  outline: none;
 }
 
 .wrapper {
