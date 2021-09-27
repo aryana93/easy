@@ -135,6 +135,7 @@ document.body.addEventListener("keydown", function(ev) {
       text = text.replace(/([\.\?\!\:»])$/gm, "$1\n")
       easy.innerText = text
       localStorage.setItem('easy', text)
+      window.scrollTo(0,0)
     })
   }
 
