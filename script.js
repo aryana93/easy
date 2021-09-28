@@ -18,12 +18,12 @@ if(localStorage.getItem('maxwidth')){
 }
 
 incwidth.addEventListener('click',function(e){
-  wrapper.style.maxWidth = String(Number(wrapper.style.maxWidth.replace('rem', '')) + 0.25) + 'rem'
+  wrapper.style.maxWidth = String(Number(wrapper.style.maxWidth.replace('rem', '')) + 0.1) + 'rem'
   localStorage.setItem('maxwidth',wrapper.style.maxWidth)
 })
 
 decwidth.addEventListener('click',function(e){
-  wrapper.style.maxWidth = String(Number(wrapper.style.maxWidth.replace('rem', '')) - 0.25) + 'rem'
+  wrapper.style.maxWidth = String(Number(wrapper.style.maxWidth.replace('rem', '')) - 0.1) + 'rem'
   localStorage.setItem('maxwidth',wrapper.style.maxWidth)
 })
 
@@ -108,12 +108,12 @@ if (localStorage.getItem('fontsize')) {
 }
 
 inc.addEventListener("click", function(e) {
-  easy.style.fontSize = String(Number(easy.style.fontSize.replace("rem", "")) + 0.25) + "rem"
+  easy.style.fontSize = String(Number(easy.style.fontSize.replace("rem", "")) + 0.1) + "rem"
   localStorage.setItem('fontsize', easy.style.fontSize)
 })
 
 dec.addEventListener("click", function(e) {
-  easy.style.fontSize = String(Number(easy.style.fontSize.replace("rem", "")) - 0.25) + "rem"
+  easy.style.fontSize = String(Number(easy.style.fontSize.replace("rem", "")) - 0.1) + "rem"
   localStorage.setItem('fontsize', easy.style.fontSize)
 })
 
