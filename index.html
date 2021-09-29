@@ -9,20 +9,22 @@
 </head>
 
 <body>
-  <div id="wrapper" class="wrapper">
-
-    <input class="button" type="button" id="inc" value="+">
-    <input class="button" type="button" id="dec" value="-">
-    <input class="button" type="button" id="incwidth" value="+">
-    <input class="button" type="button" id="decwidth" value="-">
-    <input type="checkbox" id="arabic">
-    <input type="color" id="fg">
-    <input type="color" id="bg" value="#ffffff">
-    <input class="button" type="button" id="paste" value="Paste" autofocus>
-    <textarea id="text" rows="1" cols="20"></textarea>
-
-    <div id="easy" class="easy"></div>
-
+  <div id="mainwrapper" class="mainwrapper">
+    <div class="toolswrapper">
+      <label>size</label>
+      <input class="button" type="button" id="btnincfontsize" value="+">
+      <input class="button" type="button" id="btndecfontsize" value="-">
+      <label>width</label>
+      <input class="button" type="button" id="btnincwidth" value="+">
+      <input class="button" type="button" id="btndecwidth" value="-">
+      <label>ar/en</label>
+      <input type="checkbox" id="chkboxaren">
+      <input type="color" id="clrfg" value="#000000">
+      <input type="color" id="clrbg" value="#ffffff">
+      <input class="button" type="button" id="btnpaste" value="Paste" autofocus>
+      <textarea id="textareainput" rows="1" cols="20"></textarea>
+    </div>
+    <div id="easyoutput" class="easyoutput"></div>
   </div>
   <script src="script.js" type="text/javascript"></script>
 </body>
