@@ -180,3 +180,12 @@ document.body.addEventListener("keydown", function(ev) {
   }
 
 }, false);
+
+//event listener for storing current location before closing tab
+window.addEventListener('unload',function (e) {
+  localStorage.setItem('currentposition', document.documentElement.scrollTop || document.body.scrollTop)
+})
+
+window.addEventListener('load', function (e) {
+  window.scrollTo(0,localStorage.getItem('currentposition'))
+})
