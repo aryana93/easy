@@ -39,7 +39,7 @@ body {
   max-width: 50rem;
   margin: auto;
   padding: 0;
-  background-color: #bbb;
+/*   background-color: #bbb; */
 }
 
 .button {
@@ -60,4 +60,8 @@ label{
 
 .toolswrapper{
   padding: 0.5rem;
+}
+
+textarea {
+  margin: 0.5rem;
 }
