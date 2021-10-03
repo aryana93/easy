@@ -29,9 +29,9 @@ let mainwrapper = document.querySelector("#mainwrapper")
 //name of arabic font
 //this will help quickly use a new font from CSS
 //maybe use a font selector later
-// let arabicfont = "Noto Sans Arabic"
+let arabicfont = "Noto Sans Arabic"
 // let arabicfont = "Scheherazade New"
-let arabicfont = "Noto Naskh Arabic"
+// let arabicfont = "Noto Naskh Arabic"
 
 
 //lookup for maxWidth in localStorage
