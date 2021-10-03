@@ -62,8 +62,9 @@ label{
   padding: 0.5rem;
 }
 
-textarea {
+#textareainput {
   margin: 0;
+  padding: 0;
 }
 
 .toolswrapper {
