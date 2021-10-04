@@ -73,7 +73,7 @@ if (localStorage.getItem('fontsize')) {
 if (localStorage.getItem('lineheight')) {
   easyoutput.style.lineHeight = localStorage.getItem('lineheight')
 } else {
-  easyoutput.style.lineHeight = ""
+  easyoutput.style.lineHeight = "1rem"
 }
 
 //lookup for arabic english checkbox value in localStorage
