@@ -1,6 +1,14 @@
+//******************************************************************************
+//get nodes
+//******************************************************************************
+
 //get font size button nodes
 let btnincfontsize = document.querySelector('#btnincfontsize')
 let btndecfontsize = document.querySelector("#btndecfontsize")
+
+//get line height button nodes
+let btninclineheight = document.querySelector('#btninclineheight')
+let btndeclineheight = document.querySelector("#btndeclineheight")
 
 //get width resize button nodes 
 let btnincwidth = document.querySelector("#btnincwidth")
@@ -33,38 +41,40 @@ let arabicfont = "Noto Sans Arabic"
 // let arabicfont = "Scheherazade New"
 // let arabicfont = "Noto Naskh Arabic"
 
+//******************************************************************************
+//define functions
+//******************************************************************************
 
-//lookup for maxWidth in localStorage
-//if not present assign 50rem to maxWidth
-if(localStorage.getItem('maxwidth')){
-  mainwrapper.style.maxWidth=localStorage.getItem('maxwidth')
-}else{
-  mainwrapper.style.maxWidth='50rem'
+//function for processing input text
+//returns cleaned up text
+function cleanuptext(txt){
+  txt = txt.replace(/-$\n/gm, "")
+  txt = txt.replace(/([^\.\?\!\:»])$\n/gm, "$1 ")
+  txt = txt.replace(/([\.\?\!\:»])$/gm, "$1\n")
+  return txt
 }
 
-//listen for input on width adjustment buttons
-btnincwidth.addEventListener('click',function(e){
-  mainwrapper.style.maxWidth = String(Number(mainwrapper.style.maxWidth.replace('rem', '')) + 0.1) + 'rem'
-  localStorage.setItem('maxwidth',mainwrapper.style.maxWidth)
-})
+//******************************************************************************
+//localStorage lookups
+//******************************************************************************
 
-btndecwidth.addEventListener('click',function(e){
-  mainwrapper.style.maxWidth = String(Number(mainwrapper.style.maxWidth.replace('rem', '')) - 0.1) + 'rem'
-  localStorage.setItem('maxwidth',mainwrapper.style.maxWidth)
-})
+//lookup localStorage for fontsize
+//if there is, use it
+//if not set font size to 1rem
+if (localStorage.getItem('fontsize')) {
+  easyoutput.style.fontSize = localStorage.getItem('fontsize')
+} else {
+  easyoutput.style.fontSize = "1rem"
+}
 
-//listen for arabic english checkbox
-chkboxaren.addEventListener('input', function(e) {
-  if (e.target.checked) {
-    easyoutput.style.fontFamily = arabicfont
-    easyoutput.style.direction = "rtl"
-    localStorage.setItem('arabic', 'checked')
-  } else {
-    easyoutput.style.fontFamily = "easy"
-    easyoutput.style.direction = "ltr"
-    localStorage.setItem('arabic', 'unckecked')
-  }
-})
+//lookup localStorage for lineheight
+//if there is, use it
+//if not set font size to 1rem
+if (localStorage.getItem('lineheight')) {
+  easyoutput.style.lineHeight = localStorage.getItem('lineheight')
+} else {
+  easyoutput.style.lineHeight = ""
+}
 
 //lookup for arabic english checkbox value in localStorage
 if (localStorage.getItem('arabic')) {
@@ -105,6 +115,42 @@ if (localStorage.getItem('backgroundcolor')) {
   easyoutput.style.backgroundColor = "#ffffff"
 }
 
+//lookup for maxWidth in localStorage
+//if not present assign 50rem to maxWidth
+if(localStorage.getItem('maxwidth')){
+  mainwrapper.style.maxWidth=localStorage.getItem('maxwidth')
+}else{
+  mainwrapper.style.maxWidth='50rem'
+}
+
+//******************************************************************************
+//add event listeners to nodes
+//******************************************************************************
+
+//listen for input on width adjustment buttons
+btnincwidth.addEventListener('click',function(e){
+  mainwrapper.style.maxWidth = String(Number(mainwrapper.style.maxWidth.replace('rem', '')) + 0.1) + 'rem'
+  localStorage.setItem('maxwidth',mainwrapper.style.maxWidth)
+})
+
+btndecwidth.addEventListener('click',function(e){
+  mainwrapper.style.maxWidth = String(Number(mainwrapper.style.maxWidth.replace('rem', '')) - 0.1) + 'rem'
+  localStorage.setItem('maxwidth',mainwrapper.style.maxWidth)
+})
+
+//listen for arabic english checkbox
+chkboxaren.addEventListener('input', function(e) {
+  if (e.target.checked) {
+    easyoutput.style.fontFamily = arabicfont
+    easyoutput.style.direction = "rtl"
+    localStorage.setItem('arabic', 'checked')
+  } else {
+    easyoutput.style.fontFamily = "easy"
+    easyoutput.style.direction = "ltr"
+    localStorage.setItem('arabic', 'unckecked')
+  }
+})
+
 //event listener for color picker for text color
 clrfg.addEventListener('input', function(e) {
   easyoutput.style.color = (e.target.value)
@@ -116,15 +162,6 @@ clrbg.addEventListener('input', function(e) {
   easyoutput.style.backgroundColor = (e.target.value)
   localStorage.setItem('backgroundcolor', e.target.value)
 })
-
-//function for processing input text
-//returns cleaned up text
-function cleanuptext(txt){
-  txt = txt.replace(/-$\n/gm, "")
-  txt = txt.replace(/([^\.\?\!\:»])$\n/gm, "$1 ")
-  txt = txt.replace(/([\.\?\!\:»])$/gm, "$1\n")
-  return txt
-}
 
 //get input from textarea, clean it up and display
 textareainput.addEventListener("input", function(e) {
@@ -142,15 +179,6 @@ btnpaste.addEventListener("click", function() {
   })
 })
 
-//lookup localStorage for fontsize
-//if there is, use it
-//if not set font size to 1rem
-if (localStorage.getItem('fontsize')) {
-  easyoutput.style.fontSize = localStorage.getItem('fontsize')
-} else {
-  easyoutput.style.fontSize = "1rem"
-}
-
 //increase font size when button is clicked
 //update localstorage value of fontsize
 btnincfontsize.addEventListener("click", function(e) {
@@ -165,6 +193,21 @@ btndecfontsize.addEventListener("click", function(e) {
   localStorage.setItem('fontsize', easyoutput.style.fontSize)
 })
 
+//increase line height when button is clicked
+//update localstorage value of line height
+btninclineheight.addEventListener("click", function(e) {
+  easyoutput.style.lineHeight = String(Number(easyoutput.style.lineHeight.replace("rem", "")) + 0.1) + "rem"
+  localStorage.setItem('lineheight', easyoutput.style.lineHeight)
+})
+
+//decrease line height when button is clicked
+//update localstorage value of fontsize
+btndeclineheight.addEventListener("click", function(e) {
+  easyoutput.style.lineHeight = String(Number(easyoutput.style.lineHeight.replace("rem", "")) - 0.1) + "rem"
+  localStorage.setItem('lineheight', easyoutput.style.lineHeight)
+})
+
+//handle Ctrl + V keyboard input
 document.body.addEventListener("keydown", function(ev) {
   // function to check the detection
   ev = ev || window.event; // Event object 'ev'
