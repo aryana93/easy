@@ -83,7 +83,7 @@ if (localStorage.getItem('arabic')) {
     easyoutput.style.direction = "rtl"
     chkboxaren.checked = true
   } else if (localStorage.getItem('arabic') === 'unchecked') {
-    easyoutput.style.fontFamily = "easy"
+    easyoutput.style.fontFamily = "Merriweather"
     easyoutput.style.direction = "ltr"
     chkboxaren.checked = false
   }
@@ -145,7 +145,7 @@ chkboxaren.addEventListener('input', function(e) {
     easyoutput.style.direction = "rtl"
     localStorage.setItem('arabic', 'checked')
   } else {
-    easyoutput.style.fontFamily = "easy"
+    easyoutput.style.fontFamily = "Merriweather"
     easyoutput.style.direction = "ltr"
     localStorage.setItem('arabic', 'unckecked')
   }
