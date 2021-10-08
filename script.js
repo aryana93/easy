@@ -2,22 +2,26 @@
 //get nodes
 //******************************************************************************
 
-//get font size button nodes
+//font size
 let btnincfontsize = document.querySelector('#btnincfontsize')
 let btndecfontsize = document.querySelector("#btndecfontsize")
 
-//get line height button nodes
+//word spacing
+let btnincspace = document.querySelector('#btnincspace')
+let btndecspace = document.querySelector("#btndecspace")
+
+//line height
 let btninclineheight = document.querySelector('#btninclineheight')
 let btndeclineheight = document.querySelector("#btndeclineheight")
 
-//get width resize button nodes 
+//width resize
 let btnincwidth = document.querySelector("#btnincwidth")
 let btndecwidth = document.querySelector("#btndecwidth")
 
-//get arabic english checkbox node
+//arabic english checkbox
 let chkboxaren = document.querySelector("#chkboxaren")
 
-//get color picker nodes
+//color picker
 let clrfg = document.querySelector('#clrfg')
 let clrbg = document.querySelector('#clrbg')
 
@@ -59,25 +63,28 @@ function cleanuptext(txt){
 //localStorage lookups
 //******************************************************************************
 
-//lookup localStorage for fontsize
-//if there is, use it
-//if not set font size to 1rem
+//word spacing
+if (localStorage.getItem('wordspacing')) {
+  easyoutput.style.wordSpacing = localStorage.getItem('wordspacing')
+} else {
+  easyoutput.style.wordSpacing = "0.5rem"
+}
+
+//fontsize
 if (localStorage.getItem('fontsize')) {
   easyoutput.style.fontSize = localStorage.getItem('fontsize')
 } else {
   easyoutput.style.fontSize = "1rem"
 }
 
-//lookup localStorage for lineheight
-//if there is, use it
-//if not set font size to 1rem
+//lineheight
 if (localStorage.getItem('lineheight')) {
   easyoutput.style.lineHeight = localStorage.getItem('lineheight')
 } else {
   easyoutput.style.lineHeight = "1rem"
 }
 
-//lookup for arabic english checkbox value in localStorage
+//arabic english checkbox
 if (localStorage.getItem('arabic')) {
   if (localStorage.getItem('arabic') === 'checked') {
     easyoutput.style.fontFamily = arabicfont
@@ -128,7 +135,18 @@ if(localStorage.getItem('maxwidth')){
 //add event listeners to nodes
 //******************************************************************************
 
-//listen for input on width adjustment buttons
+//word spacing
+btnincspace.addEventListener('click',function(e){
+  easyoutput.style.wordSpacing = String(Number(easyoutput.style.wordSpacing.replace("rem", "")) + 0.1) + "rem"
+  localStorage.setItem('wordspacing', easyoutput.style.wordSpacing)
+})
+
+btndecspace.addEventListener('click',function(e){
+  easyoutput.style.wordSpacing = String(Number(easyoutput.style.wordSpacing.replace("rem", "")) - 0.1) + "rem"
+  localStorage.setItem('wordspacing', easyoutput.style.wordSpacing)
+})
+
+//width adjustment
 btnincwidth.addEventListener('click',function(e){
   mainwrapper.style.maxWidth = String(Number(mainwrapper.style.maxWidth.replace('rem', '')) + 0.1) + 'rem'
   localStorage.setItem('maxwidth',mainwrapper.style.maxWidth)
@@ -180,29 +198,24 @@ btnpaste.addEventListener("click", function() {
   })
 })
 
-//increase font size when button is clicked
-//update localstorage value of fontsize
+//font size
 btnincfontsize.addEventListener("click", function(e) {
   easyoutput.style.fontSize = String(Number(easyoutput.style.fontSize.replace("rem", "")) + 0.1) + "rem"
   localStorage.setItem('fontsize', easyoutput.style.fontSize)
 })
 
-//decrease font size when button is clicked
-//update localstorage value of fontsize
 btndecfontsize.addEventListener("click", function(e) {
   easyoutput.style.fontSize = String(Number(easyoutput.style.fontSize.replace("rem", "")) - 0.1) + "rem"
   localStorage.setItem('fontsize', easyoutput.style.fontSize)
 })
 
 //increase line height when button is clicked
-//update localstorage value of line height
 btninclineheight.addEventListener("click", function(e) {
   easyoutput.style.lineHeight = String(Number(easyoutput.style.lineHeight.replace("rem", "")) + 0.1) + "rem"
   localStorage.setItem('lineheight', easyoutput.style.lineHeight)
 })
 
 //decrease line height when button is clicked
-//update localstorage value of fontsize
 btndeclineheight.addEventListener("click", function(e) {
   easyoutput.style.lineHeight = String(Number(easyoutput.style.lineHeight.replace("rem", "")) - 0.1) + "rem"
   localStorage.setItem('lineheight', easyoutput.style.lineHeight)
