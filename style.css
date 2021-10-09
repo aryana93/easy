@@ -3,6 +3,7 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Scheherazade+New:wght@400;700&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 /*@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;700&display=swap');*/
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 @font-face {
   font-family: easy;
@@ -27,11 +28,11 @@ body {
   background-color:black;
   background-size: cover;
   height: 100vh;
-  font-family: "Merriweather";
+  font-family: "Merriweather Sans";
 }
 
 .easyoutput {
-  font-family: "Merriweather";
+  font-family: "Merriweather Sans";
   font-size: 1rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
@@ -48,7 +49,7 @@ body {
 }
 
 .button {
-  font-family: "Merriweather";
+  font-family: "Merriweather Sans";
   background-color: transparent;
   border: 1px solid #444;
   padding: 0 0.5rem;
