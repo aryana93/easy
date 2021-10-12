@@ -7,8 +7,8 @@ let btnincfontsize = document.querySelector('#btnincfontsize')
 let btndecfontsize = document.querySelector("#btndecfontsize")
 
 //word spacing
-// let btnincspace = document.querySelector('#btnincspace')
-// let btndecspace = document.querySelector("#btndecspace")
+let btnincspace = document.querySelector('#btnincspace')
+let btndecspace = document.querySelector("#btndecspace")
 
 //line height
 let btninclineheight = document.querySelector('#btninclineheight')
@@ -50,8 +50,8 @@ let arabicfont = "Noto Sans Arabic"
 // FUNCTIONS
 //******************************************************************************
 
-//function for processing input text
-//returns cleaned up text
+//FUNCTION FOR PROCESSING INPUT TEXT
+//RETURNS CLEANED UP TEXT
 function cleanuptext(txt){
   txt = txt.replace(/-$\n/gm, "")
   txt = txt.replace(/([^\.\?\!\:»])$\n/gm, "$1 ")
@@ -60,15 +60,15 @@ function cleanuptext(txt){
 }
 
 //******************************************************************************
-//localStorage lookups
+// LOCALSTORAGE
 //******************************************************************************
 
-//word spacing
-// if (localStorage.getItem('wordspacing')) {
-//   easyoutput.style.wordSpacing = localStorage.getItem('wordspacing')
-// } else {
-//   easyoutput.style.wordSpacing = "0.5rem"
-// }
+// WORD SPACING
+if (localStorage.getItem('wordspacing')) {
+  easyoutput.style.wordSpacing = localStorage.getItem('wordspacing')
+} else {
+  easyoutput.style.wordSpacing = "0.5rem"
+}
 
 //fontsize
 if (localStorage.getItem('fontsize')) {
@@ -97,8 +97,8 @@ if (localStorage.getItem('arabic')) {
   }
 }
 
-//lookup if there is text in localStorage for easy display
-//if there is, display it
+// LOOKUP IF THERE IS TEXT IN LOCALSTORAGE FOR EASY DISPLAY
+// IF THERE IS, DISPLAY IT
 if (localStorage.getItem('easyoutput')) {
   easyoutput.innerText = localStorage.getItem('easyoutput')
 }
@@ -132,19 +132,19 @@ if(localStorage.getItem('maxwidth')){
 }
 
 //******************************************************************************
-//add event listeners to nodes
+// EVENT LISTENERS TO NODES
 //******************************************************************************
 
-//word spacing
-// btnincspace.addEventListener('click',function(e){
-//   easyoutput.style.wordSpacing = String(Number(easyoutput.style.wordSpacing.replace("rem", "")) + 0.1) + "rem"
-//   localStorage.setItem('wordspacing', easyoutput.style.wordSpacing)
-// })
+// WORD SPACING
+btnincspace.addEventListener('click',function(e){
+  easyoutput.style.wordSpacing = String(Number(easyoutput.style.wordSpacing.replace("rem", "")) + 0.1) + "rem"
+  localStorage.setItem('wordspacing', easyoutput.style.wordSpacing)
+})
 
-// btndecspace.addEventListener('click',function(e){
-//   easyoutput.style.wordSpacing = String(Number(easyoutput.style.wordSpacing.replace("rem", "")) - 0.1) + "rem"
-//   localStorage.setItem('wordspacing', easyoutput.style.wordSpacing)
-// })
+btndecspace.addEventListener('click',function(e){
+  easyoutput.style.wordSpacing = String(Number(easyoutput.style.wordSpacing.replace("rem", "")) - 0.1) + "rem"
+  localStorage.setItem('wordspacing', easyoutput.style.wordSpacing)
+})
 
 //width adjustment
 btnincwidth.addEventListener('click',function(e){
