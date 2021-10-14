@@ -9,6 +9,7 @@ let btndecfontsize = document.querySelector("#btndecfontsize")
 //word spacing
 let btnincspace = document.querySelector('#btnincspace')
 let btndecspace = document.querySelector("#btndecspace")
+let btnresetspace = document.querySelector("#btnresetspace")
 
 //line height
 let btninclineheight = document.querySelector('#btninclineheight')
@@ -50,8 +51,7 @@ let arabicfont = "Noto Sans Arabic"
 // FUNCTIONS
 //******************************************************************************
 
-//FUNCTION FOR PROCESSING INPUT TEXT
-//RETURNS CLEANED UP TEXT
+//PROCESSING INPUT TEXT AND RETURNS CLEANED UP TEXT
 function cleanuptext(txt){
   txt = txt.replace(/-$\n/gm, "")
   txt = txt.replace(/([^\.\?\!\:»])$\n/gm, "$1 ")
@@ -67,7 +67,7 @@ function cleanuptext(txt){
 if (localStorage.getItem('wordspacing')) {
   easyoutput.style.wordSpacing = localStorage.getItem('wordspacing')
 } else {
-  easyoutput.style.wordSpacing = "0.5rem"
+  easyoutput.style.wordSpacing = "normal"
 }
 
 //fontsize
@@ -81,7 +81,7 @@ if (localStorage.getItem('fontsize')) {
 if (localStorage.getItem('lineheight')) {
   easyoutput.style.lineHeight = localStorage.getItem('lineheight')
 } else {
-  easyoutput.style.lineHeight = "1rem"
+  easyoutput.style.lineHeight = "normal"
 }
 
 //arabic english checkbox
@@ -146,7 +146,12 @@ btndecspace.addEventListener('click',function(e){
   localStorage.setItem('wordspacing', easyoutput.style.wordSpacing)
 })
 
-//width adjustment
+btnresetspace.addEventListener('click', function(e){
+  easyoutput.style.wordSpacing = 'normal'
+  localStorage.setItem('wordspacing', 'normal')
+})
+
+// WIDTH ADJUSTMENT
 btnincwidth.addEventListener('click',function(e){
   mainwrapper.style.maxWidth = String(Number(mainwrapper.style.maxWidth.replace('rem', '')) + 0.1) + 'rem'
   localStorage.setItem('maxwidth',mainwrapper.style.maxWidth)
@@ -157,7 +162,7 @@ btndecwidth.addEventListener('click',function(e){
   localStorage.setItem('maxwidth',mainwrapper.style.maxWidth)
 })
 
-//listen for arabic english checkbox
+// ARABIC ENGLISH CHECKBOX
 chkboxaren.addEventListener('input', function(e) {
   if (e.target.checked) {
     easyoutput.style.fontFamily = arabicfont
@@ -170,13 +175,13 @@ chkboxaren.addEventListener('input', function(e) {
   }
 })
 
-//event listener for color picker for text color
+// COLOR PICKER FOR TEXT COLOR
 clrfg.addEventListener('input', function(e) {
   easyoutput.style.color = (e.target.value)
   localStorage.setItem('color', e.target.value)
 })
 
-//event listener for color picker for background color
+// COLOR PICKER FOR BACKGROUND COLOR
 clrbg.addEventListener('input', function(e) {
   easyoutput.style.backgroundColor = (e.target.value)
   localStorage.setItem('backgroundcolor', e.target.value)
