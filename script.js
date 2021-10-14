@@ -213,11 +213,17 @@ btndecfontsize.addEventListener("click", function(e) {
 
 // LINE HEIGHT
 btninclineheight.addEventListener("click", function(e) {
+  if(easyoutput.style.lineHeight===''){
+    easyoutput.style.lineHeight= easyoutput.style.fontSize
+  }
   easyoutput.style.lineHeight = String(Number(easyoutput.style.lineHeight.replace("rem", "")) + 0.1) + "rem"
   localStorage.setItem('lineheight', easyoutput.style.lineHeight)
 })
 
 btndeclineheight.addEventListener("click", function(e) {
+  if(easyoutput.style.lineHeight===''){
+    easyoutput.style.lineHeight= easyoutput.style.fontSize
+  }
   easyoutput.style.lineHeight = String(Number(easyoutput.style.lineHeight.replace("rem", "")) - 0.1) + "rem"
   localStorage.setItem('lineheight', easyoutput.style.lineHeight)
 })
