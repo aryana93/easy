@@ -11,9 +11,10 @@ let btnincspace = document.querySelector('#btnincspace')
 let btndecspace = document.querySelector("#btndecspace")
 let btnresetspace = document.querySelector("#btnresetspace")
 
-//line height
+// LINE HEIGHT
 let btninclineheight = document.querySelector('#btninclineheight')
 let btndeclineheight = document.querySelector("#btndeclineheight")
+let btnresetlineheight = document.querySelector('#btnresetlineheight')
 
 //width resize
 let btnincwidth = document.querySelector("#btnincwidth")
@@ -66,8 +67,6 @@ function cleanuptext(txt){
 // WORD SPACING
 if (localStorage.getItem('wordspacing')) {
   easyoutput.style.wordSpacing = localStorage.getItem('wordspacing')
-} else {
-  easyoutput.style.wordSpacing = "normal"
 }
 
 //fontsize
@@ -77,11 +76,9 @@ if (localStorage.getItem('fontsize')) {
   easyoutput.style.fontSize = "1rem"
 }
 
-//lineheight
+// LINEHEIGHT
 if (localStorage.getItem('lineheight')) {
   easyoutput.style.lineHeight = localStorage.getItem('lineheight')
-} else {
-  easyoutput.style.lineHeight = "normal"
 }
 
 //arabic english checkbox
@@ -147,8 +144,8 @@ btndecspace.addEventListener('click',function(e){
 })
 
 btnresetspace.addEventListener('click', function(e){
-  easyoutput.style.wordSpacing = 'normal'
-  localStorage.setItem('wordspacing', 'normal')
+  easyoutput.style.wordSpacing = ""
+  localStorage.removeItem('wordspacing')
 })
 
 // WIDTH ADJUSTMENT
@@ -214,16 +211,20 @@ btndecfontsize.addEventListener("click", function(e) {
   localStorage.setItem('fontsize', easyoutput.style.fontSize)
 })
 
-//increase line height when button is clicked
+// LINE HEIGHT
 btninclineheight.addEventListener("click", function(e) {
   easyoutput.style.lineHeight = String(Number(easyoutput.style.lineHeight.replace("rem", "")) + 0.1) + "rem"
   localStorage.setItem('lineheight', easyoutput.style.lineHeight)
 })
 
-//decrease line height when button is clicked
 btndeclineheight.addEventListener("click", function(e) {
   easyoutput.style.lineHeight = String(Number(easyoutput.style.lineHeight.replace("rem", "")) - 0.1) + "rem"
   localStorage.setItem('lineheight', easyoutput.style.lineHeight)
+})
+
+btnresetlineheight.addEventListener('click',function(e){
+  easyoutput.style.lineHeight = ""
+  localStorage.removeItem('lineheight')
 })
 
 //handle Ctrl + V keyboard input
