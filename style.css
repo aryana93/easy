@@ -1,23 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-
-@font-face {
-  font-family: easy;
-  src: url(./fonts/er.woff);
-  font-weight: normal;
-}
-
-@font-face {
-  font-family: easy;
-  src: url(./fonts/erb.woff);
-  font-weight: bold;
-}
-
-@font-face {
-  font-family: "Iran Sans";
-  src: url(./fonts/IRANSansWeb-5-5.woff2);
-  font-weight: normal;
-}
+@import url('https://fonts.googleapis.com/css2?family=Zilla+Slab:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 body {
 /*   background-image: url('./img/bg.jpg'); */
@@ -25,10 +8,12 @@ body {
   background-size: cover;
   height: 100vh;
   font-family: "source Sans pro";
+  font-family: "Zilla Slab";
 }
 
 .easyoutput {
   font-family: "source Sans pro";
+  font-family: "Zilla Slab";
   font-size: 1rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
@@ -46,6 +31,7 @@ body {
 
 .button {
   font-family: "source Sans pro";
+  font-family: "Zilla Slab";
   background-color: transparent;
   border: 1px solid #444;
   padding: 0 0.5rem;
