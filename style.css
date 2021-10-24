@@ -1,6 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic&display=swap');
-/*@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap');*/
-@import url('https://fonts.googleapis.com/css2?family=Zilla+Slab:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 body {
@@ -8,15 +7,11 @@ body {
   background-color:black;
   background-size: cover;
   height: 100vh;
-  font-family: "source Sans pro";
-  font-family: "Zilla Slab";
-  font-family: "noto sans";
+  font-family: "nunito";
 }
 
 .easyoutput {
-  font-family: "source Sans pro";
-  font-family: "Zilla Slab";
-  font-family: "noto sans";
+  font-family: "nunito";
   font-size: 1rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
@@ -33,9 +28,7 @@ body {
 }
 
 .button {
-  font-family: "source Sans pro";
-  font-family: "Zilla Slab";
-  font-family: "noto sans";
+  font-family: "nunito";
   background-color: transparent;
   border: 1px solid #444;
   padding: 0 0.5rem;
