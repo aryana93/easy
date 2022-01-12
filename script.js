@@ -48,6 +48,9 @@ let arabicfont = "Noto Sans Arabic"
 // let arabicfont = "Noto Naskh Arabic"
 // let arabicfont = "IBM Plex Sans Arabic"
 
+// button clear input text
+const btnclearinput = document.querySelector("#btnclearinput")
+
 //******************************************************************************
 // FUNCTIONS
 //******************************************************************************
@@ -136,6 +139,11 @@ if(localStorage.getItem('maxwidth')){
 btnincspace.addEventListener('click',function(e){
   easyoutput.style.wordSpacing = String(Number(easyoutput.style.wordSpacing.replace("rem", "")) + 0.1) + "rem"
   localStorage.setItem('wordspacing', easyoutput.style.wordSpacing)
+})
+
+btnclearinput.addEventListener('click', function(e) {
+  textareainput.value = ''
+  textareainput.focus()
 })
 
 btndecspace.addEventListener('click',function(e){
