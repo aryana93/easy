@@ -1,16 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Padauk:wght@400;700&display=swap');
 
 body {
 /*   background-image: url('./img/bg.jpg'); */
   background-color:black;
   background-size: cover;
   height: 100vh;
-  font-family: "Open Sans";
+  font-family: "Padauk";
 }
 
 .easyoutput {
-  font-family: "Open Sans";
+  font-family: "Padauk";
   font-size: 1rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
