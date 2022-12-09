@@ -7,11 +7,11 @@ body {
   background-color:black;
   background-size: cover;
   height: 100vh;
-  font-family: "open sans";
+  font-family: "easyreadingpro", "open sans";
 }
 
 .easyoutput {
-  font-family: "open sans";
+  font-family: "easyreadingpro", "open sans";
   font-size: 1rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
