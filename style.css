@@ -1,16 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400;1,500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 body {
 /*   background-image: url('./img/bg.jpg'); */
   background-color:black;
   background-size: cover;
   height: 100vh;
-  font-family: "ubuntu mono", "open sans";
+  font-family: "open sans";
 }
 
 .easyoutput {
-  font-family: "ubuntu mono", "open sans";
+  font-family: "open sans";
   font-size: 1rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
@@ -27,7 +28,7 @@ body {
 }
 
 .button {
-  font-family: "ubuntu mono", "Open Sans";
+  font-family: "Open Sans";
   background-color: transparent;
   border: 1px solid #444;
   padding: 0 0.5rem;
